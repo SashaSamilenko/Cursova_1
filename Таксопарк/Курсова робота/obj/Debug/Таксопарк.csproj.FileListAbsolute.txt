@@ -1,0 +1,9 @@
+C:\Users\SOM\Desktop\KPI_ФІОТ\2-й Семестр\ООП\Курсова робота 07.04\Таксопарк\Курсова робота\obj\Debug\Таксопарк.csprojAssemblyReference.cache
+C:\Users\SOM\Desktop\KPI_ФІОТ\2-й Семестр\ООП\Курсова робота 07.04\Таксопарк\Курсова робота\bin\Debug\Курсова робота.exe.config
+C:\Users\SOM\Desktop\KPI_ФІОТ\2-й Семестр\ООП\Курсова робота 07.04\Таксопарк\Курсова робота\bin\Debug\Курсова робота.exe
+C:\Users\SOM\Desktop\KPI_ФІОТ\2-й Семестр\ООП\Курсова робота 07.04\Таксопарк\Курсова робота\bin\Debug\Курсова робота.pdb
+C:\Users\SOM\Desktop\KPI_ФІОТ\2-й Семестр\ООП\Курсова робота 07.04\Таксопарк\Курсова робота\bin\Debug\TaxiPark.dll
+C:\Users\SOM\Desktop\KPI_ФІОТ\2-й Семестр\ООП\Курсова робота 07.04\Таксопарк\Курсова робота\bin\Debug\TaxiPark.pdb
+C:\Users\SOM\Desktop\KPI_ФІОТ\2-й Семестр\ООП\Курсова робота 07.04\Таксопарк\Курсова робота\obj\Debug\Таксопарк.csproj.CopyComplete
+C:\Users\SOM\Desktop\KPI_ФІОТ\2-й Семестр\ООП\Курсова робота 07.04\Таксопарк\Курсова робота\obj\Debug\Курсова робота.exe
+C:\Users\SOM\Desktop\KPI_ФІОТ\2-й Семестр\ООП\Курсова робота 07.04\Таксопарк\Курсова робота\obj\Debug\Курсова робота.pdb
