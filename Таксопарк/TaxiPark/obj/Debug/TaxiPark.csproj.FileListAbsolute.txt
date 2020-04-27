@@ -2,3 +2,7 @@ C:\Users\SOM\Desktop\KPI_2\ООП\Курсова робота 07.04\Таксоп
 C:\Users\SOM\Desktop\KPI_2\ООП\Курсова робота 07.04\Таксопарк\TaxiPark\obj\Debug\TaxiPark.pdb
 C:\Users\SOM\Desktop\KPI_2\ООП\Курсова робота 07.04\Таксопарк\TaxiPark\bin\Debug\TaxiPark.dll
 C:\Users\SOM\Desktop\KPI_2\ООП\Курсова робота 07.04\Таксопарк\TaxiPark\bin\Debug\TaxiPark.pdb
+C:\Users\SOM\Desktop\KPI_2\ООП\Курсова робота 07.04\Git\Таксопарк\TaxiPark\bin\Debug\TaxiPark.dll
+C:\Users\SOM\Desktop\KPI_2\ООП\Курсова робота 07.04\Git\Таксопарк\TaxiPark\bin\Debug\TaxiPark.pdb
+C:\Users\SOM\Desktop\KPI_2\ООП\Курсова робота 07.04\Git\Таксопарк\TaxiPark\obj\Debug\TaxiPark.dll
+C:\Users\SOM\Desktop\KPI_2\ООП\Курсова робота 07.04\Git\Таксопарк\TaxiPark\obj\Debug\TaxiPark.pdb

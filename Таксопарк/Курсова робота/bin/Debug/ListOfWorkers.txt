@@ -1,3 +1,5 @@
-Anton Climb 10 10:00 17:00
-Sasha Samoylenko 18 08:00 17:30
-Oleg Samilenko 200 10:00 13:00
+0 Anton Climb 10 10:00 17:00
+2 Sasha Samoylenko 18 08:00 17:30
+3 Oleg Samilenko 200 10:00 13:00
+4 Ortinian Revus 30 08:00 16:00
+5 Igor Martinuk 15 09:00 16:30

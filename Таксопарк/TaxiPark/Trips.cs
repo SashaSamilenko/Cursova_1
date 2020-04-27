@@ -14,10 +14,10 @@ namespace TaxiPark
         public double waitPrice{ get; set; }
         public string namePassenger { get; set; }
         public string sernamePassenger { get; set; }
-        public int index_of_Passeger { get; set; }
+        public int key_of_passeger { get; set; }
         public Passeger peo;
         public Discount disc;
-        public Trips(Passeger passeger,int index_of_Passeger, double kilometrs, double priceForOneKilometr,double waitTime,double waitPrice)
+        public Trips(Passeger passeger,int key_of_Passeger, double kilometrs, double priceForOneKilometr,double waitTime,double waitPrice)
         {
             if(kilometrs<=0)
             {
@@ -40,13 +40,11 @@ namespace TaxiPark
             this.priceForOneKilometr = priceForOneKilometr;
             this.waitPrice = waitPrice;
             this.waitTime = waitTime;
-            this.index_of_Passeger = index_of_Passeger;
-
+            this.key_of_passeger = key_of_Passeger;
+            passeger.countTrips += 1;
             peo = passeger;
             namePassenger = peo.name;
             sernamePassenger = peo.sername;
-            peo.countTrips += 1;
-            passeger.countTrips += 1;
             disc = new Discount(peo.countTrips);
         }
         public double ToPay()

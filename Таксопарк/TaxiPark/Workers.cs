@@ -14,6 +14,7 @@ namespace TaxiPark
         public double timeInWeek { get; set;}
         public DateTime timeStart{ get; set; }
         public DateTime timeFinish { get; set; }
+        public int key { get; set; }
         public Workers() { }
         public string Name()
         {
