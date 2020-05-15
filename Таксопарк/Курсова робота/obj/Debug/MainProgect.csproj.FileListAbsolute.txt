@@ -16,3 +16,12 @@ C:\Users\SOM\Desktop\KPI_2\ООП\Курсова робота 07.04\Git\Такс
 C:\Users\SOM\Desktop\KPI_2\ООП\Курсова робота 07.04\Git\Таксопарк\Курсова робота\obj\Debug\MainProgect.csproj.CopyComplete
 C:\Users\SOM\Desktop\KPI_2\ООП\Курсова робота 07.04\Git\Таксопарк\Курсова робота\obj\Debug\Курсова робота.exe
 C:\Users\SOM\Desktop\KPI_2\ООП\Курсова робота 07.04\Git\Таксопарк\Курсова робота\obj\Debug\Курсова робота.pdb
+E:\Study\KPI_2\ООП\Курсова робота 07.04\Git\Таксопарк\Курсова робота\bin\Debug\Курсова робота.exe.config
+E:\Study\KPI_2\ООП\Курсова робота 07.04\Git\Таксопарк\Курсова робота\bin\Debug\Курсова робота.exe
+E:\Study\KPI_2\ООП\Курсова робота 07.04\Git\Таксопарк\Курсова робота\bin\Debug\Курсова робота.pdb
+E:\Study\KPI_2\ООП\Курсова робота 07.04\Git\Таксопарк\Курсова робота\bin\Debug\TaxiPark.pdb
+E:\Study\KPI_2\ООП\Курсова робота 07.04\Git\Таксопарк\Курсова робота\obj\Debug\MainProgect.csprojAssemblyReference.cache
+E:\Study\KPI_2\ООП\Курсова робота 07.04\Git\Таксопарк\Курсова робота\obj\Debug\MainProgect.csproj.CopyComplete
+E:\Study\KPI_2\ООП\Курсова робота 07.04\Git\Таксопарк\Курсова робота\obj\Debug\Курсова робота.exe
+E:\Study\KPI_2\ООП\Курсова робота 07.04\Git\Таксопарк\Курсова робота\obj\Debug\Курсова робота.pdb
+E:\Study\KPI_2\ООП\Курсова робота 07.04\Git\Таксопарк\Курсова робота\bin\Debug\TaxiPark.dll

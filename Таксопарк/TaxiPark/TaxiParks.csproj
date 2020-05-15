@@ -41,11 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Edit_informations.cs" />
     <Compile Include="Discount.cs" />
+    <Compile Include="InEvents.cs" />
     <Compile Include="Information.cs" />
     <Compile Include="ITrips.cs" />
     <Compile Include="Passeger.cs" />
+    <Compile Include="TaxiPark.cs" />
     <Compile Include="Trips.cs" />
     <Compile Include="Workers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

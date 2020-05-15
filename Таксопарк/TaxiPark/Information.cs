@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
-namespace TaxiPark
+namespace TaxiParks
 {
     public class Information
     {
@@ -13,7 +13,7 @@ namespace TaxiPark
         {
 
         }
-        public void WorkersInformationOfList(List<Workers> kind)
+        /*public void WorkersInformationOfList(List<Workers> kind)
         {
             Console.WriteLine("\t\tList of workers:");
             Console.WriteLine("Name".PadRight(15) + "Sername".PadRight(15) + "All salary in the week".PadRight(25)+"TimeToStart".PadRight(15)+"TimeToFinish".PadRight(15));
@@ -28,7 +28,7 @@ namespace TaxiPark
             Console.WriteLine("Key".PadRight(15)+"Name".PadRight(15) + "Sername".PadRight(15) + "Count of trips".PadRight(15));
             foreach (var Obj in passeger)
             {
-                Console.WriteLine(Obj.key.ToString().PadRight(15)+Obj.name.PadRight(15) + Obj.sername.PadRight(15) + Obj.countTrips.ToString().PadRight(15));
+                Console.WriteLine(Obj.key.ToString().PadRight(15)+Obj.Name().PadRight(15) + Obj.SerName().PadRight(15) + Obj.countTrips.ToString().PadRight(15));
             }
         }
         public void TripsInformation(List<Trips> listOfNowTrips)
@@ -49,14 +49,14 @@ namespace TaxiPark
             bool flag = false;
             foreach (var value in passeger)
             {
-                if (value.name == name && value.sername == sername)
+                if (value.Name() == name && value.SerName() == sername)
                 {
                     if (flag == false)
                     {
                         Console.WriteLine("Key".PadRight(15) + "Name".PadRight(15) + "Sername".PadRight(15) + "Count of trips".PadRight(15));
                     }
                     flag = true;
-                    Console.WriteLine(value.key.ToString().PadRight(15) + value.name.PadRight(15) + value.sername.PadRight(15) + value.countTrips.ToString().PadRight(15));
+                    Console.WriteLine(value.key.ToString().PadRight(15) + value.Name().PadRight(15) + value.SerName().PadRight(15) + value.countTrips.ToString().PadRight(15));
                 }
             }
             if (flag == false)
@@ -97,14 +97,14 @@ namespace TaxiPark
             bool flag = false;
             foreach (var value in workers)
             {
-                if (value.name == name && value.sername == sername)
+                if (value.Name() == name && value.SerName() == sername)
                 {
                     if (flag == false)
                     {
                         Console.WriteLine("Key".PadRight(15) + "Name".PadRight(15) + "Sername".PadRight(15) + "Salary".PadRight(15));
                     }
                     flag = true;
-                    Console.WriteLine(value.key.ToString().PadRight(15) + value.name.PadRight(15) + value.sername.PadRight(15) + value.ToPay().ToString().PadRight(15));
+                    Console.WriteLine(value.key.ToString().PadRight(15) + value.Name().PadRight(15) + value.SerName().PadRight(15) + value.ToPay().ToString().PadRight(15));
                 }
             }
             if (flag == false)
@@ -210,7 +210,7 @@ namespace TaxiPark
             }
             inWork.Close();
         }
-        public void InputNowListOfTrips(ref List<Trips> ArrgOfTrips, List<Passeger> passegers)
+       public void InputNowListOfTrips(ref List<Trips> ArrgOfTrips, List<Passeger> passegers)
         {
             string pathNowTrips = @"ListOfTrips.txt";
             FileInfo fileInf = new FileInfo(pathNowTrips);
@@ -267,14 +267,14 @@ namespace TaxiPark
                 }
             }
             inTrip.Close();
-        }
+        }*/
         public void OutPutWorkersInFile(List<Workers> workers)
         {
             string pathToPassegers = @"ListOfWorkers.txt";
             StreamWriter inID = new StreamWriter(pathToPassegers);
             foreach (var Val in workers)
             {
-                inID.WriteLine(Val.key.ToString() + " " + Val.name + " " + Val.sername + " " + Val.salaryInOur.ToString() + " " + Val.timeStart.ToShortTimeString() + " " + Val.timeFinish.ToShortTimeString());
+                inID.WriteLine(Val.key.ToString() + " " + Val.Name() + " " + Val.SerName() + " " + Val.salaryInOur.ToString() + " " + Val.timeStart.ToShortTimeString() + " " + Val.timeFinish.ToShortTimeString());
             }
             inID.Close();
         }
@@ -284,7 +284,7 @@ namespace TaxiPark
             StreamWriter inWork = new StreamWriter(pathToPassegers);
             foreach (var Val in passegers)
             {
-                inWork.WriteLine(Val.key.ToString() + " " + Val.name + " " + Val.sername + " " + Val.countTrips);
+                inWork.WriteLine(Val.key.ToString() + " " + Val.Name() + " " + Val.SerName() + " " + Val.countTrips);
             }
             inWork.Close();
         }

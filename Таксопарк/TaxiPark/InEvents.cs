@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace TaxiParks
 {
-    public interface ITrips
+    class InEvents
     {
-        double ToPay();
-        string Name();
-        string SerName();
     }
 }

@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29728.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MainProgect", "Курсова робота\MainProgect.csproj", "{65A5C8C9-E772-4F0B-A438-49DD6BE0D53A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxiPark", "TaxiPark\TaxiPark.csproj", "{163166F1-991C-426B-84A0-7DD6831F1A87}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxiParks", "TaxiPark\TaxiParks.csproj", "{163166F1-991C-426B-84A0-7DD6831F1A87}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
