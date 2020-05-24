@@ -7,15 +7,17 @@ using System.IO;
 
 namespace TaxiParks
 {
-    public delegate void DelegAdd();
-    public delegate void DelegDel();
+    public delegate void DelegAdd();//Делегат додавання нового об'єкта
+    public delegate void DelegDel();//Делегат видалення старого об'єкта
     public class Passeger: TaxiPark
     {
-        public static event DelegAdd EventAdd;
-        public static event DelegDel EventDel;
-        public int countTrips=0;
-        public int key { get; set; }
+        public static event DelegAdd EventAdd;//Подія додавання пасажира
+        public static event DelegDel EventDel;//Подія видалення пасажира
+        public int countTrips=0;//Значення кількості поїздок
+        public int key { get; set; }//Значення ключа пасажира
+        //Конструктор без параметрів
         public Passeger(){}
+        //Конструктор
         public Passeger(string name,string sername,int countTrips,int key, DelegAdd addEvent, DelegDel deleteEvent)
         {
             if(name.Length==0 || name==null||sername.Length==0||sername==null)
@@ -33,6 +35,7 @@ namespace TaxiParks
             EventAdd = (addEvent != null) ? addEvent : null;
             EventDel = (deleteEvent != null) ? deleteEvent : null;
         }
+        //Метод для видалення пасажира
         static public void Delete(List<Trips> trips,List<Passeger> passegers,string name,string sername,int key)
         {
             bool flag = false;
@@ -74,6 +77,7 @@ namespace TaxiParks
             }
             Passeger.EventDel?.Invoke();
         }
+        //Додавання пасажира
         public static void Add(List<Passeger> pass, string name,string sername, DelegAdd addEvent, DelegDel deleteEvent)
         {
             int countofList = pass[pass.Count() - 1].key + 1;

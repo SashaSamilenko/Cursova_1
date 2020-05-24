@@ -10,6 +10,7 @@ namespace MainProgect
 {
     class Program
     {
+        // Головна програма
         static void Main(string[] args)
         {
             //Information info = new Information();
@@ -23,19 +24,31 @@ namespace MainProgect
             var listOfNowTrips = new List<Trips>();
             InputNowListOfTrips(ref listOfNowTrips, listOfPassegers);
             var park = new List<List<TaxiPark>>();
-            //Take information of a values in progect!!++++
-            WorkersInformationOfList(listOfWorkers);
-            TripsInformation(listOfNowTrips);
-            PassegersInformation(listOfPassegers);
-            //WorkersInformationOfList(listOfWorkers);
-            //AddNewPasseger(listOfPassegers);
-            //deletePasseger(listOfPassegers, listOfNowTrips);
-            //AddTrip(listOfNowTrips, listOfPassegers);
-            //deleteTrip(listOfNowTrips);
-            AddNewWorker(listOfWorkers);
-            deleteWorker(listOfWorkers);
+            Menu();
+            short c;
+            Console.Write("Choose an item of the Menu: ");
+            c = short.Parse(Console.ReadLine());
+            while (true)
+            {
+                switch (c)
+                {
+                    case 1: Console.Clear(); Passeger_Doing_Menu(listOfPassegers, listOfNowTrips); Menu(); Console.Write("Choose an item of the Menu: ");  c = short.Parse(Console.ReadLine()); break;
+                    case 2: Console.Clear(); Trips_Doing_Menu(listOfPassegers, listOfNowTrips); Menu(); Console.Write("Choose an item of the Menu: ");  c = short.Parse(Console.ReadLine()); break;
+                    case 3: Console.Clear(); Workers_Doing_Menu(listOfWorkers); Menu(); Console.Write("Choose an item of the Menu: ");  c = short.Parse(Console.ReadLine()); break;
+                    case 4: Console.Clear(); AboutMe(); Menu(); Console.Write("Choose an item of the Menu: "); c = short.Parse(Console.ReadLine()); break;
+                    case 5: Console.Clear(); Environment.Exit(0); break;
+                    default:
+                        Console.Clear();
+                        Menu();
+                        Console.WriteLine("You inputed not right value of the item!");
+                        Console.Write("Select an item of menu again: ");
+                        c = short.Parse(Console.ReadLine());
+                        break;
+                }
+            }
             Console.ReadKey();
         }
+        //Метод для виводу інформацію про робітників
         public static void WorkersInformationOfList(List<Workers> kind)
         {
             Console.WriteLine("\t\tList of workers:");
@@ -45,6 +58,7 @@ namespace MainProgect
                 Console.WriteLine(Obj.key.ToString().PadRight(15)+Obj.Name().PadRight(15) + Obj.SerName().PadRight(15) + Math.Round(Obj.ToPay(), 2).ToString() + "$".PadRight(25 - Math.Round(Obj.ToPay(), 2).ToString().Length) + Obj.timeStart.ToShortTimeString().PadRight(15) + Obj.timeFinish.ToShortTimeString().PadRight(15));
             }
         }
+        //Метод для виводу інформацію про пасажирів
         public static void PassegersInformation(List<Passeger> passeger)
         {
             Console.WriteLine($"\t\tList of passegers:");
@@ -54,6 +68,7 @@ namespace MainProgect
                 Console.WriteLine(Obj.key.ToString().PadRight(15) + Obj.Name().PadRight(15) + Obj.SerName().PadRight(15) + Obj.countTrips.ToString().PadRight(15));
             }
         }
+        //Метод для виводу інформацію про поїздки
         public static void TripsInformation(List<Trips> listOfNowTrips)
         {
             Console.WriteLine("\t\tList of trips");
@@ -63,7 +78,7 @@ namespace MainProgect
                 Console.WriteLine(Obj.key_of_passeger.ToString().PadRight(15)+Obj.Name().PadRight(15) + Obj.SerName().PadRight(15) + Math.Round(Obj.ToPay(), 2).ToString() + "$".PadRight(15 - Math.Round(Obj.ToPay(), 2).ToString().Length) + Obj.kilometrs.ToString().PadRight(15) + Obj.waitTime.ToString() + "(hour.)".PadRight(15 - Obj.waitTime.ToString().Length));
             }
         }
-        //////
+        //Метод для пошуку пасажирів
         public static void FindPasseger(List<Passeger> passeger)
         {
             Console.Write("Name: ");
@@ -88,6 +103,7 @@ namespace MainProgect
                 Console.WriteLine("This person did not find in list with passegers!!!");
             }
         }
+        //Метод для пошуку Поїздок
         public static void FindTrips(List<Trips> trips)
         {
             Console.Write("Name: ");
@@ -112,6 +128,7 @@ namespace MainProgect
                 Console.WriteLine("This person did not find in list with trips!!!");
             }
         }
+        //Метод для пошуку водіїв
         public static void FindWorker(List<Workers> workers)
         {
             Console.Write("Name: ");
@@ -136,7 +153,7 @@ namespace MainProgect
                 Console.WriteLine("This persone did not find in list with workers!!!");
             }
         }
-        /// /////////
+        //Метод для того, щоб зчитувати дані про водіїв з файлу
         public static void InputWorkers(ref List<Workers> listWorkers)
         {
             string pathToWorkers = @"ListOfWorkers.txt";
@@ -191,6 +208,7 @@ namespace MainProgect
             }
             inWork.Close();
         }
+        //Метод для того, щоб зчитувати дані про пасажирів з файлу
         public static void InputPasseger(ref List<Passeger> listOfPassegers)
         {
             DelegDel delegDel;
@@ -243,6 +261,7 @@ namespace MainProgect
             }
             inWork.Close();
         }
+        //Метод для того, щоб зчитувати діні про поїздки з файлу
         public static void InputNowListOfTrips(ref List<Trips> ArrgOfTrips, List<Passeger> passegers)
         {
             DelegDel delegDel;
@@ -306,7 +325,7 @@ namespace MainProgect
             }
             inTrip.Close();
         }
-        /// <summary>
+        //Вивід даних про робітників у файл
         public static void OutPutWorkersInFile(List<Workers> workers)
         {
             string pathToPassegers = @"ListOfWorkers.txt";
@@ -317,6 +336,7 @@ namespace MainProgect
             }
             inID.Close();
         }
+        //Вивід даних про пасажирів у файл
         public static void OutPutPassegersInFile(List<Passeger> passegers)
         {
             string pathToPassegers = @"ListOfPassegers.txt";
@@ -327,6 +347,7 @@ namespace MainProgect
             }
             inWork.Close();
         }
+        //Вивід даних про поїздки у файл
         public static void OutPutListOfTripsInTheFile(List<Trips> trips)
         {
             string pathToPassegers = @"ListOfTrips.txt";
@@ -342,7 +363,7 @@ namespace MainProgect
             }
             ToTrips.Close();
         }
-        ////
+        //Метод для видалення поїздки
         static public void deleteTrip(List<Trips> trips)
         {
             Console.Write("Key = ");
@@ -354,6 +375,7 @@ namespace MainProgect
             Trips.Delete(name, sername, key, trips);
             OutPutListOfTripsInTheFile(trips);
         }
+        //Метод для видалення робітника
         static public void deleteWorker(List<Workers> workers)
         {
             Console.Write("key = ");
@@ -365,6 +387,7 @@ namespace MainProgect
             Workers.Delete(workers, name, sername, key);
             OutPutWorkersInFile(workers);
         }
+        //Метод для видалення пасажира
         static public void deletePasseger(List<Passeger> passegers, List<Trips> trips)
         {
             Console.Write("Key = ");
@@ -377,7 +400,7 @@ namespace MainProgect
             OutPutPassegersInFile(passegers);
             OutPutListOfTripsInTheFile(trips);
         }
-        ////
+        //Метод для додавання нового пасажира
         static public void AddNewPasseger(List<Passeger> pass)
         {
             Console.Write("New name: ");
@@ -401,6 +424,7 @@ namespace MainProgect
             Passeger.Add(pass, name, sername,delegAdd,delegDel);
             OutPutPassegersInFile(pass);
         }
+        //Метод для додавання нової поїздки
         static public void AddTrip(List<Trips> NTrip, List<Passeger> passegers)
         {
             DelegOutPut OutPutToFile = OutPutListOfTripsInTheFile;
@@ -452,6 +476,7 @@ namespace MainProgect
             OutPutListOfTripsInTheFile(NTrip);
             OutPutPassegersInFile(passegers);
         }
+        //Метод для додавання нового водія
         static public void AddNewWorker(List<Workers> workers)
         {
             Console.Write("New name: ");
@@ -485,31 +510,164 @@ namespace MainProgect
             Workers.Add(workers, name, sername, salary, timeOfStarting, timeOfFinishing,delegDel,delegAdd);
                 OutPutWorkersInFile(workers);
         }
-        /// /
+        //Метод для виводу інформації додавання Робітників
         static public void InfoAddWorkers()
         {
             Console.WriteLine("Worker was add!");
         }
+        //Метод для виводу інформації додавання Поїздок
         static public void InfoAddTrips()
         {
             Console.WriteLine("Trip was add!");
         }
+        //Метод для вивіду ітформації додавання Пасажирів
         static public void InfoAddPassegers()
         {
             Console.WriteLine("Passeger was add!");
         }
-        // //
+        //Метод для виводу інформації видалення Робітників
         static public void InfoPopWorkers()
         {
             Console.WriteLine("Worker was delete!");
         }
+        //Метод для виводу інформації видалення Поїздок
         static public void InfoPopTrips()
         {
             Console.WriteLine("Trip was delete!");
         }
+        //Метод для виводу інформації видалення Пасажирів
         static public void InfoPopPassegers()
         {
             Console.WriteLine("Passeger was delete!");
+        }
+
+        //Вивід у консоль головного меню
+        static public void Menu()
+        {
+            Console.WriteLine("Menu");
+            Console.WriteLine("1. Come to menu for passegers");
+            Console.WriteLine("2. Come to menu for trips");
+            Console.WriteLine("3. Come to menu for workers");
+            Console.WriteLine("4. About author! ");
+            Console.WriteLine("5. Exit!");
+        }
+        //Вивід інформацію про автора курсової роботи
+        static public void AboutMe()
+        {
+            Console.WriteLine("Sername: Samilenko\nName: Oleksandr");
+            Console.WriteLine("First course");
+            Console.WriteLine("Group of: IS-93");
+        }
+        //Метод для реалізації роботи з меню для пасажирів
+        static public void Passeger_Doing_Menu(List<Passeger> listOfPassegers, List<Trips> listOfNowTrips )
+        {
+            Passeger_Menu();
+            short c;
+            Console.Write("Select an item of the menu - ");
+            c = short.Parse(Console.ReadLine());
+            bool flag = true;
+            while (flag==true)
+            {
+                switch (c)
+                {
+                    case 1: Console.Clear(); PassegersInformation(listOfPassegers); Passeger_Menu(); Console.Write("Select an item of the menu: "); c = short.Parse(Console.ReadLine()); break;
+                    case 2: Console.Clear(); AddNewPasseger(listOfPassegers); Passeger_Menu(); Console.Write("Select an item of the menu: "); c = short.Parse(Console.ReadLine()); break;
+                    case 3: Console.Clear(); PassegersInformation(listOfPassegers); deletePasseger(listOfPassegers, listOfNowTrips); Passeger_Menu(); Console.Write("Select an item of the menu: "); c = short.Parse(Console.ReadLine()); break;
+                    case 4: Console.Clear(); FindPasseger(listOfPassegers); Passeger_Menu(); Console.Write("Select an item of the menu: "); c = short.Parse(Console.ReadLine()); break;
+                    case 5: Console.Clear(); flag = false; break;
+                    default:
+                        Console.Clear();
+                        Menu();
+                        Console.WriteLine("You inputed not right value of the item!");
+                        Console.Write("Select an item of menu again: ");
+                        c = short.Parse(Console.ReadLine());
+                        break;
+                }
+            }
+        }
+        //Метод для реалізації роботи з меню поїздок
+        static public void Trips_Doing_Menu(List<Passeger> listOfPassegers, List<Trips> listOfNowTrips)
+        {
+            Trips_Menu();
+            short c;
+            Console.Write("Select an item of the menu - ");
+            c = short.Parse(Console.ReadLine());
+            bool flag = true;
+            while (flag)
+            {
+                switch (c)
+                {
+                    case 1: Console.Clear(); TripsInformation(listOfNowTrips); Trips_Menu(); Console.Write("Select an item of the menu: "); c = short.Parse(Console.ReadLine()); break;
+                    case 2: Console.Clear(); PassegersInformation(listOfPassegers);  AddTrip(listOfNowTrips,listOfPassegers); Trips_Menu(); Console.Write("Select an item of the menu: "); c = short.Parse(Console.ReadLine()); break;
+                    case 3: Console.Clear(); TripsInformation(listOfNowTrips); deleteTrip(listOfNowTrips); Trips_Menu(); Console.Write("Select an item of the menu: "); c = short.Parse(Console.ReadLine()); break;
+                    case 4: Console.Clear(); FindTrips(listOfNowTrips); Trips_Menu(); Console.Write("Select an item of the menu: "); c = short.Parse(Console.ReadLine()); break;
+                    case 5: Console.Clear(); flag = false; break;
+                    default:
+                        Console.Clear();
+                        Menu();
+                        Console.WriteLine("You inputed not right value of the item!");
+                        Console.Write("Select an item of menu again: ");
+                        c = short.Parse(Console.ReadLine());
+                        break;
+                }
+            }
+        }
+        //Метод для реалізації роботи з меню поїздок
+        static public void Workers_Doing_Menu(List<Workers> listOfWorkers)
+        {
+            Workers_Menu();
+            short c;
+            Console.Write("Select an item of the menu - ");
+            c = short.Parse(Console.ReadLine());
+            bool flag = true;
+            while (flag)
+            {
+                switch (c)
+                {
+                    case 1: Console.Clear(); WorkersInformationOfList(listOfWorkers);  Workers_Menu(); Console.Write("Select an item of the menu: "); c = short.Parse(Console.ReadLine()); break;
+                    case 2: Console.Clear(); AddNewWorker(listOfWorkers); Workers_Menu(); Console.Write("Select an item of the menu: "); c = short.Parse(Console.ReadLine()); break;
+                    case 3: Console.Clear(); WorkersInformationOfList(listOfWorkers); deleteWorker(listOfWorkers); Workers_Menu(); Console.Write("Select an item of the menu: "); c = short.Parse(Console.ReadLine()); break;
+                    case 4: Console.Clear(); FindWorker(listOfWorkers); Workers_Menu(); Console.Write("Select an item of the menu: ");  c = short.Parse(Console.ReadLine()); break;
+                    case 5: Console.Clear(); flag = false; break;
+                    default:
+                        Console.Clear();
+                        Menu();
+                        Console.WriteLine("You inputed not right value of the item!");
+                        Console.Write("Select an item of menu again: ");
+                        c = short.Parse(Console.ReadLine());
+                        break;
+                }
+            }
+        }
+        //Вивід меню пасажирів
+        static public void Passeger_Menu()
+        {
+            Console.WriteLine("Passeger`s menu");
+            Console.WriteLine("1. OutPut list of passegers");
+            Console.WriteLine("2. Add new a passeger");
+            Console.WriteLine("3. Delete the passeger");
+            Console.WriteLine("4. Find the passeger");
+            Console.WriteLine("5. Return to main menu!");
+        }
+        //Вивід меню для поїздок
+        static public void Trips_Menu()
+        {
+            Console.WriteLine("Trip`s menu");
+            Console.WriteLine("1. OutPut list of trips");
+            Console.WriteLine("2. Add new a trip");
+            Console.WriteLine("3. Delete the trip");
+            Console.WriteLine("4. Find the trip");
+            Console.WriteLine("5. Return to main menu!");
+        }
+        //Вивід меню для робітників - водіїв
+        static public void Workers_Menu()
+        {
+            Console.WriteLine("Worker`s menu");
+            Console.WriteLine("1. OutPut list of workers");
+            Console.WriteLine("2. Add new a new worker");
+            Console.WriteLine("3. Delete the worker");
+            Console.WriteLine("4. Find the worker");
+            Console.WriteLine("5. Return to main menu!");
         }
     }
 }

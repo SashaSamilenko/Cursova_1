@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace TaxiParks
 {
-    public interface ITrips
+    public interface ITrips//Інтерфейс
     {
-        double ToPay();
-        string Name();
-        string SerName();
+        double ToPay();//Метод ціни
+        string Name();//Ім'я
+        string SerName();//Фамілії
     }
 }

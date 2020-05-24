@@ -6,21 +6,22 @@ using System.Threading.Tasks;
 
 namespace TaxiParks
 {
-    public delegate void DelegOutPut(List<Trips> NTrip);
+    public delegate void DelegOutPut(List<Trips> NTrip);//  Делегат виведення інформації при зміні даних списку поїздок
     public class Trips : TaxiPark
     {
-        public static event DelegOutPut OutPutEvent;
-        public static event DelegAdd EventAdd;
-        public static event DelegDel EventDel;
-        public double kilometrs { get; set; }
-        public double waitTime { get; set; }
-        public double priceForOneKilometr { get; set; }
-        public double waitPrice{ get; set; }
-        public string namePassenger { private get; set; }
-        public string sernamePassenger { private get; set; }
-        public int key_of_passeger { get; set; }
-        public Passeger peo;
-        public Discount disc;
+        public static event DelegOutPut OutPutEvent;//Подія зміни даних поїздки
+        public static event DelegAdd EventAdd;//Подія додавання поїздки
+        public static event DelegDel EventDel;//Подія видалення поїздки
+        public double kilometrs { get; set; }//Кількість кілометрів за поїздку
+        public double waitTime { get; set; }//час очікування
+        public double priceForOneKilometr { get; set; }//ціна за один кілометр
+        public double waitPrice{ get; set; }//Ціна за одну хвилину очікуання пасажира
+        public string namePassenger { private get; set; }//ім'я пасажира
+        public string sernamePassenger { private get; set; }//фамілія пасажира
+        public int key_of_passeger { get; set; }//ключ пасажира
+        public Passeger peo;//об'єк пасажир
+        public Discount disc;//об'єкт знижки
+        //Конструктор з параметрами
         public Trips(DelegOutPut OutPutEvent,DelegAdd addEvent,DelegDel deleteEvent)
         {
             if (OutPutEvent!= null)
@@ -30,7 +31,9 @@ namespace TaxiParks
             EventAdd = (addEvent != null) ? addEvent : null;
             EventDel = (deleteEvent != null) ? deleteEvent : null;
         }
+        //Конструктор без параметрів
         public Trips() { }
+        //Конструктор з параметрами
         public Trips(Passeger passeger,int key_of_Passeger, double kilometrs, double priceForOneKilometr,double waitTime,double waitPrice, DelegOutPut OutPutEvent, DelegAdd addEvent, DelegDel deleteEvent)
         {
             if(kilometrs<=0)
@@ -67,18 +70,22 @@ namespace TaxiParks
             EventAdd += (addEvent != null) ? addEvent : null;
             EventDel += (deleteEvent != null) ? deleteEvent : null;
         }
+        //Перевизначення методу повернення вартості
         public override double ToPay()
         {
             return (disc.ToPay(kilometrs, priceForOneKilometr) + waitTime * waitPrice);
         }
+        //Перевизначення методу повернення імені
         public override string Name()
         {
             return namePassenger;
         }
+        //Перевизначення методу повернення фамілії
         public override string SerName()
         {
             return sernamePassenger;
         }
+        //Видалення поїздки
         static public void Delete(string name,string sername,int key,List<Trips> trips)
         {
             bool flag = false;
@@ -97,6 +104,7 @@ namespace TaxiParks
             }
             Trips.EventDel?.Invoke();
         }
+        //Додавання поїздки
         static public void Add(List<Passeger> passegers, List<Trips> NTrip, string name,string sername,int key,double Long, double PriceForOneKilometr,double waiting_time,double waiting_price, DelegOutPut OutPutEvent, DelegAdd addEvent, DelegDel deleteEvent)
         {
             bool flag = false;

@@ -1,7 +1,8 @@
-2 Sasha Samoylenko 18 08:00 17:30
 3 Oleg Samilenko 200 10:00 13:00
 5 Igor Martinuk 15 09:00 16:30
 6 Oleg Kravchuk 120 08:30 18:30
 7 Maxim Samilenko 2000 07:30 18:00
 8 Oleg Lashko 180 09:30 17:15
 9 Igor Klichko 120 08:10 18:00
+10 Egor Kit 20 08:10 18:00
+11 ssad sadasd 12 10:00 12:00

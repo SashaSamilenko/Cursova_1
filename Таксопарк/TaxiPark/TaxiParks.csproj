@@ -42,8 +42,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Discount.cs" />
-    <Compile Include="InEvents.cs" />
-    <Compile Include="Information.cs" />
     <Compile Include="ITrips.cs" />
     <Compile Include="Passeger.cs" />
     <Compile Include="TaxiPark.cs" />
