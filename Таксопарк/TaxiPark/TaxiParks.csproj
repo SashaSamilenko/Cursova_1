@@ -44,7 +44,7 @@
     <Compile Include="Discount.cs" />
     <Compile Include="ITrips.cs" />
     <Compile Include="Passeger.cs" />
-    <Compile Include="TaxiPark.cs" />
+    <Compile Include="Person.cs" />
     <Compile Include="Trips.cs" />
     <Compile Include="Workers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

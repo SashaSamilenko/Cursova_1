@@ -7,7 +7,7 @@ using System.IO;
 
 namespace TaxiParks
 {
-    public class Workers : TaxiPark
+    public class Workers : Person
     {
         public static event DelegAdd EventAdd;//Подія додавання елемента
         public static event DelegDel EventDelete;//Подія видалення елемента

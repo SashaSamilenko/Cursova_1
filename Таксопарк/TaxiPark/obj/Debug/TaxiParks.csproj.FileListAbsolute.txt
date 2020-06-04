@@ -2,3 +2,4 @@ E:\Study\KPI_2\ООП\Курсова робота 07.04\Git\Таксопарк\T
 E:\Study\KPI_2\ООП\Курсова робота 07.04\Git\Таксопарк\TaxiPark\bin\Debug\TaxiPark.pdb
 E:\Study\KPI_2\ООП\Курсова робота 07.04\Git\Таксопарк\TaxiPark\obj\Debug\TaxiPark.dll
 E:\Study\KPI_2\ООП\Курсова робота 07.04\Git\Таксопарк\TaxiPark\obj\Debug\TaxiPark.pdb
+E:\Study\KPI_2\ООП\Курсова робота 07.04\Git\Таксопарк\TaxiPark\obj\Debug\TaxiParks.csprojAssemblyReference.cache

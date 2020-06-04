@@ -9,7 +9,7 @@ namespace TaxiParks
 {
     public delegate void DelegAdd();//Делегат додавання нового об'єкта
     public delegate void DelegDel();//Делегат видалення старого об'єкта
-    public class Passeger: TaxiPark
+    public class Passeger: Person
     {
         public static event DelegAdd EventAdd;//Подія додавання пасажира
         public static event DelegDel EventDel;//Подія видалення пасажира

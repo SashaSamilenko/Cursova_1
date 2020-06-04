@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace TaxiParks
 {
     public delegate void DelegOutPut(List<Trips> NTrip);//  Делегат виведення інформації при зміні даних списку поїздок
-    public class Trips : TaxiPark
+    public class Trips
     {
         public static event DelegOutPut OutPutEvent;//Подія зміни даних поїздки
         public static event DelegAdd EventAdd;//Подія додавання поїздки
@@ -71,17 +71,17 @@ namespace TaxiParks
             EventDel += (deleteEvent != null) ? deleteEvent : null;
         }
         //Перевизначення методу повернення вартості
-        public override double ToPay()
+        public double ToPay()
         {
             return (disc.ToPay(kilometrs, priceForOneKilometr) + waitTime * waitPrice);
         }
         //Перевизначення методу повернення імені
-        public override string Name()
+        public string Name()
         {
             return namePassenger;
         }
         //Перевизначення методу повернення фамілії
-        public override string SerName()
+        public string SerName()
         {
             return sernamePassenger;
         }

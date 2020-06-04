@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TaxiParks
 {
-    public abstract class TaxiPark:ITrips
+    public abstract class Person:ITrips
     {
         public string name { private get; set; }//Властивість імені
         public string sername { private get; set; }//Властивість фамілії

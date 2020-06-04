@@ -13,7 +13,6 @@ namespace MainProgect
         // Головна програма
         static void Main(string[] args)
         {
-            //Information info = new Information();
             //Input list of workers
             var listOfWorkers = new List<Workers>();
             InputWorkers(ref listOfWorkers);
@@ -23,7 +22,6 @@ namespace MainProgect
             //List of trips
             var listOfNowTrips = new List<Trips>();
             InputNowListOfTrips(ref listOfNowTrips, listOfPassegers);
-            var park = new List<List<TaxiPark>>();
             Menu();
             short c;
             Console.Write("Choose an item of the Menu: ");
